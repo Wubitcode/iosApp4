@@ -84,7 +84,7 @@ ScavengerHunt/                              # Main Project Root Directory Node
 
 
 
-       ### Onboarding Home Screen (0 Found: Novice Explorer)
+### Onboarding Home Screen (0 Found: Novice Explorer)
 ![Chamber](screenshots/Chamber.png)
 
 ### Progress Tracker Home Screen (5 Found: Expert Tracker)
@@ -97,7 +97,7 @@ ScavengerHunt/                              # Main Project Root Directory Node
 ![Remaining](screenshots/Remaining.png)
 
 ### Clue List Screen (FOUND Filter Active)
-![Found.ong](screenshots/Found.png)
+![Found](screenshots/Found.png)
 
 ### Target Detail Screen: Bakery
 ![Bakery](screenshots/Bakery.png)
