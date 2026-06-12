@@ -1,7 +1,7 @@
-# 🧭 Chamber Quest: Chamber of Commerce Scavenger Hunt Edition
+# Chamber Quest: Chamber of Commerce Scavenger Hunt Edition
 
 Course Code: MWD3A (iOS Development)  
-Assignment: Assignment 4 – Final Production Optimization & Polishing Run  
+Assignment: iosApp4
 Platform: iOS  17+ (SwiftUI)  
 Author: Wubit   
 Date: June 11, 2026
@@ -14,9 +14,9 @@ Developed for the local Chamber of Commerce, this production-grade Scavenger Hun
 
 Using core concepts explored in the *Cards* tutorial—including complex view hierarchies, declarative data state iteration, dynamic list rendering, and asset processing—the app implements an interactive camera simulation to track progress, updates state engines natively across multiple separate windows, and dynamically awards tier-based commercial discounts based on real-time performance.
 
----
 
-# 🏗️ Technical Architecture & Project Scaffolding
+
+# Technical Architecture & Project Scaffolding
 
 This workspace strictly conforms to the production file organization hierarchy visible in your Xcode navigation layout, completely decoupling data architecture models from declarative subview layers:
 
@@ -93,8 +93,8 @@ ScavengerHunt/                              # Main Project Root Directory Node
 ### Clue List Screen (ALL View)
 ![All](screenshots/All.png)
 
-### Clue List Screen (REMAINING Filter Active)
-![Remaining](screenshots/Remaining.png)
+### Clue List Screen (Hidden Targrts )
+![Hidden Target](screenshots/HiddenTargets.png)
 
 ### Clue List Screen (FOUND Filter Active)
 ![Found](screenshots/Found.png)
@@ -103,7 +103,7 @@ ScavengerHunt/                              # Main Project Root Directory Node
 ![Bakery](screenshots/Bakery.png)
 
 ### Target Detail Screen: Ice Cream Shop
-![Ice Cream](screenshots/Ice Cream.png)
+![IceCream](screenshots/IceCream.png)
 
 ### Reward Results Screen
 ![Results](screenshots/Results.png)
