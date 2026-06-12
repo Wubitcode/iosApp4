@@ -1,146 +1,109 @@
-# Scavenger Hunt App 
+# 🧭 Chamber Quest: Chamber of Commerce Scavenger Hunt Edition
 
 Course Code: MWD3A (iOS Development)  
-Assignment: Assignment 3 – Scaffolding Core Features  
-Platform:  iOS 17+ (SwiftUI)
+Assignment: Assignment 4 – Final Production Optimization & Polishing Run  
+Platform: iOS  17+ (SwiftUI)  
+Author: Wubit   
+Date: June 11, 2026
 
-#  Project Overview
+---
 
-Developed for the local Chamber of Commerce, this Scavenger Hunt application is designed to promote local businesses (restaurants, movie theatres, bookstores, etc.) by engaging residents in an interactive city-wide hunt. The app highlights 10 hidden items across various venues, offering clues to guide participants. 
+# 📝 Project Overview
 
-Using concepts explored in the *Cards* tutorial—including complex view hierarchies, dynamic state management, data iteration, and asset rendering—the app implements an interactive camera simulation to track progress and dynamically awards tier-based commercial discounts based on performance.
+Developed for the local Chamber of Commerce, this production-grade Scavenger Hunt application is designed to promote local businesses (restaurants, movie theatres, bookstores, etc.) by engaging residents in an interactive city-wide discovery loop. The app highlights 10 hidden items across various local venues, offering architectural clues to guide participants. 
 
+Using core concepts explored in the *Cards* tutorial—including complex view hierarchies, declarative data state iteration, dynamic list rendering, and asset processing—the app implements an interactive camera simulation to track progress, updates state engines natively across multiple separate windows, and dynamically awards tier-based commercial discounts based on real-time performance.
 
-# Project  Structure
+---
 
+# 🏗️ Technical Architecture & Project Scaffolding
 
-ScavengerHunt/
-├── ScavengerHuntApp.swift      # Application Entry point & Main Environment Provider
-├── ContentView.swift           # Main Application View Root Gatekeeper
-├── Models/
-│   ├── HuntItem.swift          # Core Architectural Data Structure Model
-│   └── RewardManager.swift     # Centralized State and Rule Business Engine
-├── Resources/
-│   └── HuntData.swift          # Static Clue Inventory Repository Setup
-├── Views/
-│   ├── SplashView.swift        # Initial Animated Timing Screen Sequence
-│   ├── HomeView.swift          # Onboarding Welcome Dashboard Component
-│   ├── ClueListView.swift      # Interactive Master Checkpoint Roster Layout
-│   ├── DetailView.swift        # Expanded Clue Inspection & Image Capture View
-│   └── ResultsView.swift       # Final Campaign Status Metrics Summary Recapitulation
-└── Utils/
-    └── Utils.swift             # Hexadecimal Color Hex Initializers & Helpers
+This workspace strictly conforms to the production file organization hierarchy visible in your Xcode navigation layout, completely decoupling data architecture models from declarative subview layers:
 
-
-#  Features
-
-* Dynamic Animation Splash Sequence: Implements smooth `withAnimation` breathing cycles on structural vector elements before handling automated background routing handoffs.
-* Modern Navigation Stack Architecture: Powered entirely by the modern `NavigationStack` and type-safe data-driven `.navigationDestination(isPresented:)` modifiers to avoid layout deprecation warmings.
-* Centralized Reactive State Management: Leverages Combine's `@StateObject` and `@EnvironmentObject` pipelines to synchronize progress across 5 decoupled view layouts seamlessly.
-* Tiered Reward System Engine: Automatically processes user milestones in real time to calculate and distribute custom business coupons up to a grand prize draw entry threshold.
-* High-Contrast Cyber Theme:  Styled beautifully using a customized glassmorphic design palette with glowing neon accents (`#00F5D4`), dark mode optimizations, and clean monospace typography layouts.
-
-
-🛠 Business Rules & Reward Tiers
-
-The RewardManager automatically evaluates structural item completion states and matches current scores against the Chamber of Commerce parameters:
-     
-     Items Found      Unlocked Reward Status Message
-     
-     0 – 4 Items      FIND X MORE ITEMS TO UNLOCK DISCOUNTS!
-     5 – 6 Items      10% OFF DISCOUNT CODE UNLOCKED!
-     7 – 9 Items      20% OFF DISCOUNT CODE UNLOCKED!
-     10 Items         20% OFF CODE + $5,000 GRAND PRIZE DRAW ENTRY!
-
-### Splash Screen
-![splash](screenshots/splash.png)
-
-### Home Page
-![home](screenshots/home.png)
-
-### Clue List Screen
-![clue](screenshots/clue.png)
-
-### Selected Target Screen
-![selected](screenshots/selected.png)
-
-### Target Detail Screen
-![detail](screenshots/detail.png)
-
-### Reward Screen
-![reward](screenshots/reward.png)
-
-+-------------------+
-|    Splash Screen  |
-|                   |
-|  Scavenger Hunt   |
-|                   |
-+---------+---------+
-          |
-          v
-
-+-------------------+
-|    Home Screen    |
-|                   |
-| Start Hunt Button |
-|                   |
-+---------+---------+
-          |
-          v
-
-+-------------------+
-|   Clue List View  |
-|                   |
-| Clue 1            |
-| Clue 2            |
-| Clue 3            |
-| ...               |
-+---------+---------+
-          |
-          v
-
-+-------------------+
-|   Detail Screen   |
-|                   |
-| Clue Information  |
-|                   |
-| Take Picture      |
-+---------+---------+
-          |
-          v
-
-+-------------------+
-|   Results Screen  |
-|                   |
-| Items Found: 7    |
-| Reward: 20% Off   |
-+-------------------+
+```text
+ScavengerHunt/                              # Main Project Root Directory Node
+└── ScavengerHunt/                          # Inner Workspace Application Target Core Folder
+    ├── Models/                             # Data structural blueprints & logical schema definitions
+    │   ├── HuntItem.swift                  # Core target tracking business data model blueprint
+    │   └── RewardManager.swift             # Central state management repository and observable engine
+    │
+    ├── Resources/                          # Project asset configurations and static data assets
+    │   └── HuntData.swift                  # Seed data store managing structural regional business profiles
+    │
+    ├── Views/                              # Modular UI layout hierarchy (SwiftUI Declarative Canvas views)
+    │   ├── ClueListView.swift              # Master roster view featuring dynamic segmented rows and filter controls
+    │   ├── DetailView.swift                # Granular asset inspection screen featuring expandable hint drawers
+    │   ├── HomeView.swift                  # Main landing hub incorporating reactive player ranking metrics
+    │   ├── ResultsView.swift               # Final evaluation dashboard with state-driven barcode claim logic
+    │   └── SplashView.swift                # Animated intro screen featuring auto-delay animation dispatchers
+    │
+    ├── Assets.xcassets                     # Global imagery catalog, dynamic color spaces, and app icons
+    ├── ContentView.swift                   # Underlying root controller layout container
+    ├── ScavengerHuntApp.swift              # Main application execution entry point & environment injection
+    └── Utils.swift                         # Math hexadecimal color extensions & background thread handlers
 
 
-Scavenger Hunt App
 
-Screen 1:
-SplashView
-- App title
-- Logo
-- Auto navigate to HomeView
 
-Screen 2:
-HomeView
-- Welcome message
-- Start Hunt button
 
-Screen 3:
-ClueListView
-- List of 10 clues
-- Select clue
 
-Screen 4:
-DetailView
-- Show clue details
-- Take Picture button
 
-Screen 5:
-ResultsView
-- Display items found
-- Display reward
+    +---------------------------------------------+
+       |               SplashView.swift              |
+       |  - Animated Branding Pulse Logo Animation   |
+    |  - Automated 2.5s Thread Routing Dispatcher |
+       +----------------------+----------------------+
+                              |
+                              ▼
+       +---------------------------------------------+
+       |                HomeView.swift               |
+       |  - Reactive Player Rank / Badge Statistics |
+       |  - Navigation Router Action Launch Button   |
+       +----------------------+----------------------+
+                              |
+                              ▼
+       +---------------------------------------------+
+       |              ClueListView.swift             |
+       |  - 3-Way Segment Filter Control Tab Header  |
+       |  - Reactive Neon Tracker Bar (Safe-Scroll)  |
+       +----------------------+----------------------+
+                              |
+                              ▼
+       +---------------------------------------------+
+       |               DetailView.swift              |
+       |  - Expandable Accordion Hint Disclosure     |
+       |  - Snap Camera Shutter Validation Simulator |
+       +----------------------+----------------------+
+                              |
+                              ▼
+       +---------------------------------------------+
+       |               ResultsView.swift             |
+       |  - Multi-Tier Conditional Logic Calculator  |
+       |  - Wallet Activation Toggle & Barcode Layer |
+       +---------------------------------------------+
+
+
+
+       ### Onboarding Home Screen (0 Found: Novice Explorer)
+![Chamber](screenshots/Chamber.png)
+
+### Progress Tracker Home Screen (5 Found: Expert Tracker)
+![Tracker](screenshots/Tracker.png)
+
+### Clue List Screen (ALL View)
+![All](screenshots/All.png)
+
+### Clue List Screen (REMAINING Filter Active)
+![Remaining](screenshots/Remaining.png)
+
+### Clue List Screen (FOUND Filter Active)
+![Found.ong](screenshots/Found.png)
+
+### Target Detail Screen: Bakery
+![Bakery](screenshots/Bakery.png)
+
+### Target Detail Screen: Ice Cream Shop
+![Ice Cream](screenshots/Ice Cream.png)
+
+### Reward Results Screen
+![Results](screenshots/Results.png)

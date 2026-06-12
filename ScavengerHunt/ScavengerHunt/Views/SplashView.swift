@@ -19,10 +19,12 @@ struct SplashView: View {
     
     var body: some View {
         if isActive {
+            // MARK: - Downstream State Navigation Destination
+            // Switches view context to HomeView after the delay timer expires successfully.
             HomeView()
         } else {
             ZStack {
-                // Sets background foundations
+                // Sets background foundations using deep atmospheric gradients
                 LinearGradient(colors: [Color.black, Color(hex: "0D1B2A")], startPoint: .top, endPoint: .bottom)
                     .ignoresSafeArea()
                 
@@ -56,7 +58,7 @@ struct SplashView: View {
             }
             .onAppear {
                 // MARK: - Delayed Transition Mechanism
-                // Suspends execution thread for 2.5 seconds to showcase introductory layouts cleanly
+                // Suspends execution thread for 2.5 seconds to showcase introductory layouts cleanly.
                 DispatchQueue.onAfterDelay(2.5) {
                     withAnimation(.easeIn(duration: 0.5)) {
                         self.isActive = true
@@ -67,6 +69,10 @@ struct SplashView: View {
     }
 }
 
+// MARK: - Xcode Canvas Live Interactive Preview
 #Preview {
+    // FIXED: Added environment object injection injection macro pipeline.
+    // This feeds RewardManager down to HomeView when the splash timer completes, preventing canvas preview crashes.
     SplashView()
+        .environmentObject(RewardManager())
 }
